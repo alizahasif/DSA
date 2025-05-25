@@ -9,21 +9,21 @@ struct Node
 };
 class LinkedList 
 	{public:
-    Node *mhead, *head1, *head2, *head3, *head4;
+    Node *masterhead, *head1, *head2, *head3, *head4;
 	bool head4exists=false;
 	public:
     LinkedList() 
 	{
-        mhead = head1 = head2 = head3 = head4 = NULL;
+        masterhead = head1 = head2 = head3 = head4 = NULL;
     }
-    void insertAtB1(int value) 
+    void insertid1(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
         newNode->next = NULL;
         head1 = newNode;
     }
-    void insertAtstr1(string value) 
+    void insertitem1(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -35,7 +35,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtprice1(int value) 
+    void insertprice1(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
@@ -47,7 +47,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtdate1(string value) 
+    void insertdate1(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -59,7 +59,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAttime1(string value) 
+    void inserttime1(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -84,14 +84,14 @@ class LinkedList
         }
         cout <<"NULL"<<endl;
     }
-    void insertAtB2(int value) 
+    void insertid2(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
         newNode->next = NULL;
         head2 = newNode;
     }
-    void insertAtstr2(string value) 
+    void insertitem2(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -103,7 +103,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtprice2(int value) 
+    void insertprice2(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
@@ -115,7 +115,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtdate2(string value) 
+    void insertdate2(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -127,7 +127,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAttime2(string value) 
+    void inserttime2(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -152,14 +152,14 @@ class LinkedList
         }
         cout <<"NULL"<<endl;
     }
-    void insertAtB3(int value) 
+    void insertid3(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
         newNode->next = NULL;
         head3 = newNode;
     }
-    void insertAtstr3(string value) 
+    void insertitem3(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -171,7 +171,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtprice3(int value) 
+    void insertprice3(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
@@ -183,7 +183,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtdate3(string value) 
+    void insertdate3(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -195,7 +195,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAttime3(string value) 
+    void inserttime3(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -220,7 +220,7 @@ class LinkedList
         }
         cout <<"NULL"<<endl;
     }
-     void insertAtB4(int value) 
+     void insertid4(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
@@ -228,7 +228,7 @@ class LinkedList
         head4 = newNode;
         head4exists=true;
     }
-    void insertAtstr4(string value) 
+    void insertitem4(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -240,7 +240,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtprice4(int value) 
+    void insertprice4(int value) 
 	{
         Node* newNode = new Node();
         newNode->data = value;
@@ -252,7 +252,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAtdate4(string value) 
+    void insertdate4(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -264,7 +264,7 @@ class LinkedList
         }
         temp->next = newNode;
     }
-    void insertAttime4(string value) 
+    void inserttime4(string value) 
 	{
         Node* newNode = new Node();
         newNode->str = value;
@@ -298,7 +298,7 @@ class LinkedList
         Node* masterNode3 = new Node();
            masterNode3->data = head3->data;
 		  
-        mhead = masterNode1;
+        masterhead = masterNode1;
         masterNode1->next = masterNode2;
         masterNode2->next = masterNode3;
          if (head4exists) {
@@ -313,7 +313,7 @@ class LinkedList
     }
     void displayMasterList() 
 	{
-        Node* temp = mhead;
+        Node* temp = masterhead;
         while (temp != NULL) 
 		{
             cout << temp->data << "->";
@@ -366,8 +366,6 @@ class LinkedList
     void comparePrices() {
     int price1 = -1, price2 = -1, price3 = -1, price4= -1;
    
-
-    
     Node* temp = head1;
     while (temp != NULL) {
         if (temp->str == "" && temp->data != head1->data) 
@@ -442,25 +440,25 @@ int main()
    
     LinkedList list;
     cout<<"Sugar list:\n";
-    list.insertAtB1(1);
-    list.insertAtstr1("Sugar");
-    list.insertAtprice1(100);
-    list.insertAtdate1("20may");
-    list.insertAttime1("11:05");
+    list.insertid1(1);
+    list.insertitem1("Sugar");
+    list.insertprice1(100);
+    list.insertdate1("20may");
+    list.inserttime1("11:05");
     list.display1();
     cout<<"Electricity list:\n";
-    list.insertAtB2(2);
-    list.insertAtstr2("Electricity");
-    list.insertAtprice2(500);
-    list.insertAtdate2("25may");
-    list.insertAttime2("11:05");
+    list.insertid2(2);
+    list.insertitem2("Electricity");
+    list.insertprice2(500);
+    list.insertdate2("25may");
+    list.inserttime2("11:05");
     list.display2();
     cout<<"Gas list:\n";
-    list.insertAtB3(3);
-    list.insertAtstr3("Gas");
-    list.insertAtprice3(200);
-    list.insertAtdate3("19may");
-    list.insertAttime3("11:05");
+    list.insertid3(3);
+    list.insertitem3("Gas");
+    list.insertprice3(200);
+    list.insertdate3("19may");
+    list.inserttime3("11:05");
     list.display3();
     cout <<endl<<"master Linked List :" << endl;
     list.createMasterList();
@@ -485,11 +483,11 @@ int main()
     			cout<<"time:";
     			cin>>n4;
     			cout<<endl;
-    			list.insertAtB4(4);
-    			list.insertAtstr4(n1);
-   				list.insertAtprice4(n2);
-    			list.insertAtdate4(n3);
-    			list.insertAttime4(n4);
+    			list.insertid4(4);
+    			list.insertitem4(n1);
+   				list.insertprice4(n2);
+    			list.insertdate4(n3);
+    			list.inserttime4(n4);
     			list.display4();
     			cout<<endl<<"new master linklist: "<<endl;
     			 list.createMasterList();
